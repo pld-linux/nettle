@@ -11,6 +11,7 @@ Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/lsh/
 BuildRequires:	gmp-devel
 BuildRequires:	m4
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
