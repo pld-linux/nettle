@@ -1,12 +1,12 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	1.11
+Version:	1.12
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.lysator.liu.se/pub/security/lsh/%{name}-%{version}.tar.gz
-# Source0-md5:	11034b182cfe9e902890a7223c622042
+# Source0-md5:	0bda9389409e48462cd8357b80a55a4f
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/lsh/
 BuildRequires:	gmp-devel
