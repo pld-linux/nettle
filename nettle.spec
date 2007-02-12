@@ -1,5 +1,5 @@
 Summary:	Nettle - a cryptographic library
-Summary(pl):	Nettle - biblioteka kryptograficzna
+Summary(pl.UTF-8):   Nettle - biblioteka kryptograficzna
 Name:		nettle
 Version:	1.14
 Release:	2
@@ -24,38 +24,38 @@ particular, Nettle doesn't do algorithm selection. It doesn't do
 memory allocation. It doesn't do any I/O. All these is up to
 application.
 
-%description -l pl
-Nettle to biblioteka kryptograficzna zaprojektowana tak, aby ³atwo
-da³o siê jej u¿yæ w prawie ka¿dej sytuacji: w narzêdziach
-kryptograficznych dla jêzyków zorientowanych obiektowo (C++, Python,
+%description -l pl.UTF-8
+Nettle to biblioteka kryptograficzna zaprojektowana tak, aby Å‚atwo
+daÅ‚o siÄ™ jej uÅ¼yÄ‡ w prawie kaÅ¼dej sytuacji: w narzÄ™dziach
+kryptograficznych dla jÄ™zykÃ³w zorientowanych obiektowo (C++, Python,
 Pike...), w aplikacjach typu LSH czy GNUPG, a nawet w przestrzeni
-j±dra. Nettle robi tylko jedn± rzecz - niskopoziomow± kryptografiê,
-udostêpniaj±c do tego prosty, ale ogólny interfejs. Nettle nie
-dokonuje ¿adnego wyboru algorytmu, przydzielania pamiêci, czy operacji
+jÄ…dra. Nettle robi tylko jednÄ… rzecz - niskopoziomowÄ… kryptografiÄ™,
+udostÄ™pniajÄ…c do tego prosty, ale ogÃ³lny interfejs. Nettle nie
+dokonuje Å¼adnego wyboru algorytmu, przydzielania pamiÄ™ci, czy operacji
 we/wy - pozostawia to aplikacji.
 
 %package devel
 Summary:	Header files for nettle library
-Summary(pl):	Pliki nag³ówkowe biblioteki nettle
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki nettle
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for nettle library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki nettle.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki nettle.
 
 %package static
 Summary:	Static nettle library
-Summary(pl):	Statyczna biblioteka nettle
+Summary(pl.UTF-8):   Statyczna biblioteka nettle
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static nettle library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka nettle.
 
 %prep
