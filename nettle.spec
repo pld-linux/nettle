@@ -1,5 +1,5 @@
 Summary:	Nettle - a cryptographic library
-Summary(pl.UTF-8):   Nettle - biblioteka kryptograficzna
+Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
 Version:	1.14
 Release:	2
@@ -36,7 +36,7 @@ we/wy - pozostawia to aplikacji.
 
 %package devel
 Summary:	Header files for nettle library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki nettle
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki nettle
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -48,7 +48,7 @@ Pliki nagłówkowe biblioteki nettle.
 
 %package static
 Summary:	Static nettle library
-Summary(pl.UTF-8):   Statyczna biblioteka nettle
+Summary(pl.UTF-8):	Statyczna biblioteka nettle
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
