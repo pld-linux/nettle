@@ -9,8 +9,10 @@ Source0:	ftp://ftp.lysator.liu.se/pub/security/lsh/%{name}-%{version}.tar.gz
 # Source0-md5:	6b0fd004359660b65ff3eca77b3d5fa6
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/lsh/
+BuildRequires:	ghostscript
 BuildRequires:	gmp-devel
 BuildRequires:	m4
+BuildRequires:	tetex-dvips
 BuildRequires:	texinfo-texi2dvi
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
