@@ -1,12 +1,12 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	1.15
+Version:	2.0
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.lysator.liu.se/pub/security/lsh/%{name}-%{version}.tar.gz
-# Source0-md5:	6b0fd004359660b65ff3eca77b3d5fa6
+# Source0-md5:	d813bc76b1042d76100efbc6a955d7df
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/lsh/
 BuildRequires:	ghostscript
@@ -69,7 +69,7 @@ Statyczna biblioteka nettle.
 	--enable-shared
 
 %{__make} \
-	SHLIBLIBS="-lgmp"
+	LIBHOGWEED_LIBS="-L. -lnettle -lgmp"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -77,30 +77,39 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT%{_infodir}/dir
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%post devel	-p	/sbin/postshell
+%post	devel -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun devel	-p	/sbin/postshell
+%postun	devel -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/nettle-lfib-stream
+%attr(755,root,root) %{_bindir}/pkcs1-conv
+%attr(755,root,root) %{_bindir}/sexp-conv
+%attr(755,root,root) %{_libdir}/libhogweed.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.1
+%attr(755,root,root) %{_libdir}/libnettle.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libnettle.so.3
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/libhogweed.so
+%attr(755,root,root) %{_libdir}/libnettle.so
 %{_includedir}/nettle
-%{_infodir}/*.info*
+%{_infodir}/nettle.info*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libhogweed.a
+%{_libdir}/libnettle.a

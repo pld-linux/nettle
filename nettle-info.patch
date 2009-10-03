@@ -1,14 +1,14 @@
---- nettle-1.7/nettle.texinfo.orig	Tue Mar 11 16:19:54 2003
-+++ nettle-1.7/nettle.texinfo	Fri Apr  4 22:01:05 2003
-@@ -8,9 +8,9 @@
- @footnotestyle end
- @syncodeindex fn cp
+--- nettle-2.0/nettle.texinfo.orig	2009-06-08 20:27:11.000000000 +0200
++++ nettle-2.0/nettle.texinfo	2009-10-03 13:00:46.576615127 +0200
+@@ -32,9 +32,9 @@
+ @insertcopying
+ @end titlepage
  
--@dircategory GNU Libraries
+-@dircategory Encryption
 +@dircategory Libraries:
  @direntry
--* Nettle: (nettle).           A low-level cryptographics library.
-+* Nettle: (nettle).			A low-level cryptographics library
+-* Nettle: (nettle).             A low-level cryptographic library.
++* Nettle: (nettle).			A low-level cryptographic library
  @end direntry
  
- @set UPDATED-FOR 1.5
+ @contents
