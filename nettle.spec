@@ -11,7 +11,6 @@ Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/lsh/
 BuildRequires:	ghostscript
 BuildRequires:	gmp-devel
-BuildRequires:	m4
 BuildRequires:	tetex-dvips
 BuildRequires:	texinfo-texi2dvi
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
