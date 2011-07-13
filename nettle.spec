@@ -1,19 +1,20 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	2.1
+Version:	2.2
 Release:	1
-License:	GPL v2+ (parts on LGPL v2.1+)
+License:	LGPL v2.1+
 Group:		Libraries
-Source0:	ftp://ftp.lysator.liu.se/pub/security/lsh/%{name}-%{version}.tar.gz
-# Source0-md5:	2bfaf16234a5d8deb96cd23f53a682bb
+Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
+# Source0-md5:	9a9c6102eb9909019f8a13b67578cdfe
 Patch0:		%{name}-info.patch
-URL:		http://www.lysator.liu.se/~nisse/lsh/
+URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
-BuildRequires:	gmp-devel
+BuildRequires:	gmp-devel >= 3.1
 BuildRequires:	m4
 BuildRequires:	tetex-dvips
 BuildRequires:	texinfo-texi2dvi
+Requires:	gmp >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -94,6 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/nettle-hash
 %attr(755,root,root) %{_bindir}/nettle-lfib-stream
 %attr(755,root,root) %{_bindir}/pkcs1-conv
 %attr(755,root,root) %{_bindir}/sexp-conv
