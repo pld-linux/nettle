@@ -1,12 +1,12 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	2.2
+Version:	2.4
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	9a9c6102eb9909019f8a13b67578cdfe
+# Source0-md5:	450be8c4886d46c09f49f568ad6fa013
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
@@ -69,8 +69,7 @@ Statyczna biblioteka nettle.
 %configure \
 	--enable-shared
 
-%{__make} \
-	LIBHOGWEED_LIBS="-L. -lnettle -lgmp"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -109,6 +108,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libhogweed.so
 %attr(755,root,root) %{_libdir}/libnettle.so
 %{_includedir}/nettle
+%{_pkgconfigdir}/hogweed.pc
+%{_pkgconfigdir}/nettle.pc
 %{_infodir}/nettle.info*
 
 %files static
