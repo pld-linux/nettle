@@ -1,12 +1,12 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	2.7.1
-Release:	2
+Version:	3.1.1
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	003d5147911317931dd453520eb234a5
+# Source0-md5:	b40fa88dc32f37a182b6b42092ebb144
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
@@ -61,6 +61,19 @@ Static nettle library.
 %description static -l pl.UTF-8
 Statyczna biblioteka nettle.
 
+%package progs
+Summary:	nettle utility programs
+Summary(pl.UTF-8):	Narzędzia wykorzystujące bibliotekę nettle
+Group:		Applications/Crypto
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description progs
+This package contains utility programs that use nettle library.
+
+%description progs -l pl.UTF-8
+Kilka przykładowych narzędzi wykorzystujących bibliotekę
+nettle.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -94,14 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/nettle-hash
-%attr(755,root,root) %{_bindir}/nettle-lfib-stream
-%attr(755,root,root) %{_bindir}/pkcs1-conv
-%attr(755,root,root) %{_bindir}/sexp-conv
 %attr(755,root,root) %{_libdir}/libhogweed.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.2
+%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.4
 %attr(755,root,root) %{_libdir}/libnettle.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnettle.so.4
+%attr(755,root,root) %ghost %{_libdir}/libnettle.so.6
 
 %files devel
 %defattr(644,root,root,755)
@@ -116,3 +125,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libhogweed.a
 %{_libdir}/libnettle.a
+
+%files progs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/nettle-hash
+%attr(755,root,root) %{_bindir}/nettle-lfib-stream
+%attr(755,root,root) %{_bindir}/nettle-pbkdf2
+%attr(755,root,root) %{_bindir}/pkcs1-conv
+%attr(755,root,root) %{_bindir}/sexp-conv
