@@ -1,20 +1,20 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	3.2
+Version:	3.3
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	afb15b4764ebf1b4e6d06c62bd4d29e4
+# Source0-md5:	10f969f78a463704ae73529978148dbe
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
-BuildRequires:	gmp-devel >= 3.1
+BuildRequires:	gmp-devel >= 5.0
 BuildRequires:	m4
 BuildRequires:	tetex-dvips
 BuildRequires:	texinfo-texi2dvi
-Requires:	gmp >= 3.1
+Requires:	gmp >= 5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
