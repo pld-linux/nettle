@@ -1,12 +1,12 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	3.4.1
-Release:	2
+Version:	3.5
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	9bdebb0e2f638d3b9d91f7fc264b70c1
+# Source0-md5:	39049e5caca0a275b7f5b29d4f145a82
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
@@ -106,11 +106,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libhogweed.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.4
+%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.5
 %attr(755,root,root) %{_libdir}/libnettle.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnettle.so.6
+%attr(755,root,root) %ghost %{_libdir}/libnettle.so.7
 
 %files devel
 %defattr(644,root,root,755)
