@@ -1,20 +1,20 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	3.5.1
+Version:	3.6
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	0e5707b418c3826768d41130fbe4ee86
+# Source0-md5:	c45ee24ed7361dcda152a035d396fe8a
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
-BuildRequires:	gmp-devel >= 6.0
+BuildRequires:	gmp-devel >= 6.1
 BuildRequires:	m4
 BuildRequires:	tetex-dvips
 BuildRequires:	texinfo-texi2dvi
-Requires:	gmp >= 6.0
+Requires:	gmp >= 6.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -108,9 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libhogweed.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.5
+%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.6
 %attr(755,root,root) %{_libdir}/libnettle.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnettle.so.7
+%attr(755,root,root) %ghost %{_libdir}/libnettle.so.8
 
 %files devel
 %defattr(644,root,root,755)
