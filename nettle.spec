@@ -5,7 +5,7 @@ Version:	3.7.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
+Source0:	https://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
 # Source0-md5:	4d23a99df650ee88511653fb9acea3f0
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
