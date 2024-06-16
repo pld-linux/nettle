@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static libraries
+
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
@@ -12,6 +16,7 @@ URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
 BuildRequires:	gmp-devel >= 6.1
 BuildRequires:	m4
+BuildRequires:	rpmbuild(macros) >= 1.527
 BuildRequires:	tetex-dvips
 BuildRequires:	texinfo-texi2dvi
 Requires:	gmp >= 6.1
@@ -80,7 +85,8 @@ nettle.
 
 %build
 %configure \
-	--enable-shared
+	--enable-shared \
+	%{__enable_disable static_libs static}
 
 %{__make}
 
@@ -121,10 +127,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/nettle.pc
 %{_infodir}/nettle.info*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libhogweed.a
 %{_libdir}/libnettle.a
+%endif
 
 %files progs
 %defattr(644,root,root,755)
