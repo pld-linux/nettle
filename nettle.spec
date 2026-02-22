@@ -5,12 +5,12 @@
 Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
-Version:	3.10.2
+Version:	4.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	b28bcbf6f045ff007940a9401673600d
+# Source0-md5:	144401453f9f35e53938bcacfc59800e
 Patch0:		%{name}-info.patch
 URL:		http://www.lysator.liu.se/~nisse/nettle/
 BuildRequires:	ghostscript
@@ -113,15 +113,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libhogweed.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libhogweed.so.6
-%attr(755,root,root) %{_libdir}/libnettle.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnettle.so.8
+%{_libdir}/libhogweed.so.*.*
+%ghost %{_libdir}/libhogweed.so.7
+%{_libdir}/libnettle.so.*.*
+%ghost %{_libdir}/libnettle.so.9
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libhogweed.so
-%attr(755,root,root) %{_libdir}/libnettle.so
+%{_libdir}/libhogweed.so
+%{_libdir}/libnettle.so
 %{_includedir}/nettle
 %{_pkgconfigdir}/hogweed.pc
 %{_pkgconfigdir}/nettle.pc
