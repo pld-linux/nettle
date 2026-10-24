@@ -6,7 +6,7 @@ Summary:	Nettle - a cryptographic library
 Summary(pl.UTF-8):	Nettle - biblioteka kryptograficzna
 Name:		nettle
 Version:	3.10.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://www.lysator.liu.se/~nisse/archive/%{name}-%{version}.tar.gz
@@ -46,7 +46,7 @@ we/wy - pozostawia to aplikacji.
 Summary:	Header files for nettle library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki nettle
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for nettle library.
@@ -58,7 +58,7 @@ Pliki nagłówkowe biblioteki nettle.
 Summary:	Static nettle library
 Summary(pl.UTF-8):	Statyczna biblioteka nettle
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static nettle library.
@@ -70,7 +70,7 @@ Statyczna biblioteka nettle.
 Summary:	nettle utility programs
 Summary(pl.UTF-8):	Narzędzia wykorzystujące bibliotekę nettle
 Group:		Applications/Crypto
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description progs
 This package contains utility programs that use nettle library.
